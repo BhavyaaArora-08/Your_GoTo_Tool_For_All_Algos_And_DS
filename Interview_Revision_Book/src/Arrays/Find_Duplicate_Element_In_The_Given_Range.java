@@ -11,6 +11,7 @@ public class Find_Duplicate_Element_In_The_Given_Range {
 		one(arr);
 		two(arr);
 		three(arr);
+		five(arr);
 	}
 	
 	//TC: O(nlogn) SC:O(1)
@@ -58,6 +59,12 @@ public class Find_Duplicate_Element_In_The_Given_Range {
 				break;
 			}
 		}
+		
+		for(int i=0;i<arr.length;i++)
+		{
+			if(arr[i]<0)
+				arr[i]=-arr[i];
+		}
 	}
 	
 	//TC: O(n) SC:O(1)
@@ -67,4 +74,20 @@ public class Find_Duplicate_Element_In_The_Given_Range {
 	
 	}
 
+	//TC: O(n) SC:O(1)
+	public static void five(int[] arr)
+	{
+		int n=arr.length-1;
+		int sum=(n*(n+1))/2;
+		
+		int temp=0;
+		
+		for(int i=0;i<arr.length;i++)
+		{
+			temp+=arr[i];
+		}
+		
+		System.out.println(temp-sum);
+		return;
+	}
 }
