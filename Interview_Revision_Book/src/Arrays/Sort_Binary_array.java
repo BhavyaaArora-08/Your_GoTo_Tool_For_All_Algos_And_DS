@@ -7,12 +7,14 @@ public class Sort_Binary_array {
 		
 		int[] arr= {0,0,0,1,1,0,1,0,1,1};
 		one(arr);
-		two(arr);
-		
+
 		for(int i=0;i<arr.length;i++)
 			System.out.print(arr[i]+",");
 		
 		System.out.println();
+		
+		two(arr);
+		
 	}
 	
 	//TC: O(n)
@@ -42,7 +44,28 @@ public class Sort_Binary_array {
 	//TC: O(n)
 	public static void two(int[] arr)
 	{
+		int lo=0;
+		int hi=arr.length-1;
 		
+		while(lo<hi)
+		{
+			while(lo<arr.length && arr[lo]==0)
+				lo++;
+			while(hi>0 && arr[hi]==1)
+				hi--;
+			
+			if(lo<hi)
+			{
+				int temp=arr[lo];
+				arr[lo]=arr[hi];
+				arr[hi]=temp;
+			}
+		}
+		
+		for(int val:arr)
+			System.out.print(val+",");
+		
+		System.out.println();
 	}
 
 }

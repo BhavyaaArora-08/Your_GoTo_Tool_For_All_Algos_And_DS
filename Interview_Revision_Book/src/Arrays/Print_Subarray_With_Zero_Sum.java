@@ -15,7 +15,7 @@ public class Print_Subarray_With_Zero_Sum {
 		
 	}
 	
-	//TC: O(n^2)
+	//TC: O(n^3) SC: O(1)
 	public static void one(int[] arr)
 	{
 			
@@ -32,7 +32,7 @@ public class Print_Subarray_With_Zero_Sum {
 			
 	}
 		
-	//TC: find
+	//TC: O(n^3) SC: O(n^2)  check this complexity
 	public static void two(int[] arr)
 	{
 		int[] sum=new int[arr.length];
