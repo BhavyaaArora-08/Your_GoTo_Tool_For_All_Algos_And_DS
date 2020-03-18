@@ -17,8 +17,7 @@ public class Print_Subarray_With_Zero_Sum {
 	
 	//TC: O(n^3) SC: O(1)
 	public static void one(int[] arr)
-	{
-			
+	{	
 		for(int si=0;si<arr.length;si++)
 		{
 			int sum=0;
