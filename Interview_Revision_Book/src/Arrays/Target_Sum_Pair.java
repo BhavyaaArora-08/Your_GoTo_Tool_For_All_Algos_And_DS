@@ -7,10 +7,12 @@ public class Target_Sum_Pair {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] arr= {1,2,3,4,5};
+		int[] arr= {1,1,1,1,2,3,4,5};
 		one(arr, 6);
 		System.out.println();
 		two(arr, 6);
+		System.out.println();
+		three(arr, 6);
 	}
 	
 	// TC: O(n^2)
@@ -28,8 +30,34 @@ public class Target_Sum_Pair {
 		}
 	}
 	
-	// TC: O(n)
+	//TC: O(nlogn) 
 	public static void two(int[] arr,int target)
+	{
+		int lo=0;
+		int hi=arr.length-1;
+		Arrays.sort(arr); //O(nlogn) which is lower than O(n)
+		
+		//O(n)
+		while(lo<hi)
+		{
+			int sum=arr[lo]+arr[hi];
+			
+			if(sum==target)
+			{
+				System.out.println(arr[lo]+","+arr[hi]);
+				lo++;
+			}
+			else if(sum>target)
+			{
+				hi--;
+			}
+			else
+				lo++;
+		}
+	}
+	
+	// TC: O(n)
+	public static void three(int[] arr,int target)
 	{
 		Arrays.sort(arr);
 		HashMap<Integer, Boolean> map=new HashMap<Integer, Boolean>();
