@@ -22,6 +22,7 @@ public class Height_Of_Binary_Tree extends BinaryTree {
         System.out.println(bt1.height(bt1.root));
 	}
 
+	//Recursive approach
 	public int height(Node node)
 	{
 		if(node==null)
